@@ -21,6 +21,11 @@ module Alchemy
         if admin?
           can :manage, Alchemy.user_class
         end
+
+        if member?
+          cannot :index, Alchemy.user_class
+        end
+
       end
 
       private
